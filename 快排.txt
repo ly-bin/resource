@@ -1,0 +1,26 @@
+def path_sort(list,start_index,end_index):
+ 2         flag = list[end_index]
+ 3         i = start_index - 1
+ 4         for j in range(start_index,end_index):
+ 5             if list[j] > flag:
+ 6                 pass
+ 7             else:
+ 8                 i += 1
+ 9                 tmp = list[i]
+10                 list[i] = list[j]
+11                 list[j] = tmp
+12         tmp = l[end_index]
+13         l[end_index] = l[i+1]
+14         l[i+1] = tmp
+15 
+16         return i+1
+17 
+18     def Quick_sort(list,start_index,end_index):
+19         if start_index >= end_index:
+20             return
+21         middle = path_sort(list,start_index,end_index)
+22         Quick_sort(list,start_index,middle-1)
+23         Quick_sort(list,middle+1,end_index)
+24         print(l)
+25 
+26     Quick_sort(l,0,len(l)-1)
