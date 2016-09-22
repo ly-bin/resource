@@ -20,7 +20,6 @@ public class LengthOfLastWord {
 
     private static int lengthOfLastWord1(String s) {
         String[] strArr = s.split(" ");
-        System.out.println(strArr.length);
         if(strArr.length > 0){
             return strArr[strArr.length - 1].length();
         }
