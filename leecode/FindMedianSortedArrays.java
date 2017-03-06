@@ -18,11 +18,9 @@ public class FindMedianSortedArrays {
         int newArray[] = new int[len];
         while(index1 < nums1.length && index2 < nums2.length){
             if(nums1[index1] < nums2[index2]){
-                newArray[index3++] = nums1[index1];
-                index1++;
+                newArray[index3++] = nums1[index1++];
             }else {
-                newArray[index3++] = nums2[index2];
-                index2++;
+                newArray[index3++] = nums2[index2++];
             }
         }
         while (index1 < nums1.length){
