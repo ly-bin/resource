@@ -36,6 +36,28 @@ public class RedisLockUntil {
         }
         return 0L;
     }
+    
+    /**
+     * 循环多次获取锁
+     * @param lockKey
+     * @param times
+     * @return
+     */
+    public long tryLock(String lockKey,int times){
+        AtomicInteger repead = new AtomicInteger(0);
+        long lockId = 0L;
+        do {
+            lockId = lock(lockKey);
+            if (lockId <= 0){
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    log.error("key={}多次获取锁时，中间休眠失败",lockKey);
+                }
+            }
+        }while (lockId <= 0 && repead.incrementAndGet() <= times);
+        return lockId;
+    }
 
     /**
      * 解锁
