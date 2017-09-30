@@ -36,3 +36,7 @@ public class Test {
     
 // 结果输出：只有一个结果输出，证明对象只被创建了一次
 // 666==1588658361
+
+// 1、枚举类编译后的类签名 public final class test.SomeThing extends java.lang.Enum<test.SomeThing>，
+//    即枚举是不可继承别的类或枚举，也不可被继承
+// 2、枚举的每一个“属性（INSTANCE）”都是 public static final的；
