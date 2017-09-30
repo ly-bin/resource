@@ -4,19 +4,22 @@
 public enum SomeThing {
     INSTANCE;
     private Abc instance;
+
     SomeThing() {
         instance = new Abc();
     }
+
     public Abc getInstance() {
         return instance;
-    
+    }
+
     // 实际需要的单例对象
     private class Abc {
         private Abc() {
-            System.out.print("666==" + new Random().nextInt() );
+            System.out.print("666==" + new Random().nextInt());
         }
     }
- }
+}
 
 /**
  * 测试类
